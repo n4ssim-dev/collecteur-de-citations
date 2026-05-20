@@ -2,19 +2,31 @@ import requests
 
 # Emet une requete à l'api défini et retourne 
 # la réponse à l'utilisateur en JSON
-def appel_api():
-    api_url = 'http://api.quotable.io/random'
-    response =  requests.get(url=api_url)
+def appel_api(nbCitations: int):
+    api_url : str = 'http://api.quotable.io/random'
+    citations : list = []
 
-    if response.status_code == requests.codes.ok:
-        r = response.json()
+    for i in range (nbCitations):
+    
+        response =  requests.get(url=api_url)
 
-        citation = {
-            'auteur': r['author'],
-            'contenu':r['content']
-        }
+        if response.status_code == requests.codes.ok:
+            r = response.json()
 
-    return citation;
+            citation = {
+                'id': i,
+                'auteur': r['author'],
+                'contenu':r['content']
+            }
 
-citation = appel_api()
-print(citation)
+            citations.append(citation)
+            i+=1
+
+    return citations;
+
+citations = appel_api(5)
+count = 0
+
+for citation in citations:
+    print(f'{citations[count]}\n\n')
+    count += 1

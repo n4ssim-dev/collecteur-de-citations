@@ -30,3 +30,18 @@ count = 0
 for citation in citations:
     print(f'{citations[count]}\n\n')
     count += 1
+
+
+#####################################
+#Template
+#####################################
+
+
+for citation in citations:
+    html = open("template.html").read()
+    html = html.replace("INSERT-CONTENU", citation["contenu"])
+    html = html.replace("INSERT-AUTEUR", citation["auteur"])
+    
+
+with open("template.html", "w") as fp:
+   fp.write(html)

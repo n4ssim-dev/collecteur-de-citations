@@ -4,8 +4,7 @@ Ce document produit par [@n4ssim-dev](https://github.com/n4ssim-dev) (Nassim) et
 
 ## Convention de nommage : Nom de branche
 
-- `api/nom-de-la-fonctionnalite`
-- `html/nom-de-la-fonctionnalite`
+- `feat/nom-de-la-fonctionnalite`
 - `fix/nom-du-bug`
 - `docs/nom-de-la-doc`
 

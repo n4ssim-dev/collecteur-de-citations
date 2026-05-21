@@ -19,7 +19,7 @@ L'objectif est de produire une page HTML visuellement soignée à partir de cita
 ## Consignes de lancement
 
 - Executer le script 'main.py'
-- Ouvrir le fichier 'output.html' à 'http://127.0.0.1:3000/output.html'
+- Ouvrir le fichier 'output.html' à 'http://127.0.0.1:3000/output.html' à l'aide du plugin LivePreview
 - 5 nouvelles citations sont générer à chaque fois que le script est executé et que la page est rafraîchis
 
 
@@ -31,6 +31,7 @@ L'objectif est de produire une page HTML visuellement soignée à partir de cita
 - La manipulation de données JSON
 - La génération automatique de contenu HTML
 - Une première approche de l'automatisation de production web
+- La stylisation de contenu généré dynamiquement
 
 ---
 
@@ -50,4 +51,4 @@ L'objectif est de produire une page HTML visuellement soignée à partir de cita
 1. **Requête initiale** — émettre un appel à l'API fournie
 2. **Parsing** — transformer les données JSON en dictionnaires Python exploitables
 3. **Template HTML** — produire une structure HTML avec Python sur laquelle mapper les données
-4. **Mise en forme** — styliser la page produite avec du CSS
+4. **Mise en forme** — styliser la page output produite avec du CSS

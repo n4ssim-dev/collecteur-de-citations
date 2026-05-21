@@ -16,6 +16,15 @@ L'objectif est de produire une page HTML visuellement soignée à partir de cita
 
 ---
 
+## Consignes de lancement
+
+- Executer le script 'main.py'
+- Ouvrir le fichier 'output.html' à 'http://127.0.0.1:3000/output.html'
+- 5 nouvelles citations sont générer à chaque fois que le script est executé et que la page est rafraîchis
+
+
+---
+
 ## Notions abordées
 
 - Les appels HTTP

@@ -32,16 +32,20 @@ for citation in citations:
     count += 1
 
 
-#####################################
-#Template
-#####################################
+#---------------------------------
+#-------      Template       -----
+#---------------------------------
 
+template = open("template.html").read()
+cards = ""
 
 for citation in citations:
-    html = open("template.html").read()
-    html = html.replace("INSERT-CONTENU", citation["contenu"])
-    html = html.replace("INSERT-AUTEUR", citation["auteur"])
-    
+    card = f'<div class="card"><div class="container"><p>{citation["contenu"]}</p><h4><b>{citation["auteur"]}</b></h4></div></div>'
+    cards += card + "\n        "
 
-with open("template.html", "w") as fp:
-   fp.write(html)
+html = template.replace("INSERT-CARDS", cards)
+
+# Génération d'une copie de template.html avec les cards ajoutés 
+# à chaque fois que main.py est executé
+with open("output.html", "w") as fp:
+    fp.write(html)

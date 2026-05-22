@@ -3,34 +3,17 @@ import requests
 # Emet une requete à l'api défini et retourne 
 # la réponse à l'utilisateur en JSON
 def appel_api(nbCitations: int):
-    api_url : str = 'http://api.quotable.io/random'
-    citations : list = []
+    api_url : str = f'http://api.quotable.io/quotes/random?limit={nbCitations}'
 
-    for i in range (nbCitations):
-    
-        response =  requests.get(url=api_url)
+    response =  requests.get(url=api_url)
 
-        if response.status_code == requests.codes.ok:
-            r = response.json()
-
-            citation = {
-                'id': i,
-                'auteur': r['author'],
-                'contenu':r['content']
-            }
-
-            citations.append(citation)
-            i+=1
+    if response.status_code == requests.codes.ok:
+        citations = response.json()
 
     return citations;
 
 citations = appel_api(5)
 count = 0
-
-for citation in citations:
-    print(f'{citations[count]}\n\n')
-    count += 1
-
 
 #---------------------------------
 #-------      Template       -----
@@ -39,8 +22,8 @@ for citation in citations:
 template = open("template.html").read()
 cards = ""
 
-for citation in citations:
-    card = f'<div class="card"><div class="container"><p>{citation["contenu"]}</p><hr><h4><b>{citation["auteur"]}</b></h4></div></div>'
+for i in range(len(citations)):
+    card = f'<div class="card"><div class="container"><p>{citations[i]["content"]}</p><hr><h4><b>{citations[i]["author"]}</b></h4></div></div>'
     cards += card + "\n        "
 
 html = template.replace("INSERT-CARDS", cards)

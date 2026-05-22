@@ -40,7 +40,7 @@ template = open("template.html").read()
 cards = ""
 
 for citation in citations:
-    card = f'<div class="card"><div class="container"><p>{citation["contenu"]}</p><h4><b>{citation["auteur"]}</b></h4></div></div>'
+    card = f'<div class="card"><div class="container"><p>{citation["contenu"]}</p><hr><h4><b>{citation["auteur"]}</b></h4></div></div>'
     cards += card + "\n        "
 
 html = template.replace("INSERT-CARDS", cards)
